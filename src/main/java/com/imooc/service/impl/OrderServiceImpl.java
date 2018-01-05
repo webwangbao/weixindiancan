@@ -14,7 +14,8 @@ import com.imooc.repository.OrderDetailRepository;
 import com.imooc.repository.OrderMasterRepository;
 import com.imooc.service.*;
 import com.imooc.utils.KeyUtil;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -34,9 +35,8 @@ import java.util.stream.Collectors;
  * 2017-06-11 18:43
  */
 @Service
-@Slf4j
 public class OrderServiceImpl implements OrderService {
-
+     private static final Logger log = LoggerFactory.getLogger(OrderServiceImpl.class);
     @Autowired
     private ProductService productService;
 

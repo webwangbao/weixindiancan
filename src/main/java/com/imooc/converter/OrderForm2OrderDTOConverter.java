@@ -7,7 +7,8 @@ import com.imooc.dto.OrderDTO;
 import com.imooc.enums.ResultEnum;
 import com.imooc.exception.SellException;
 import com.imooc.form.OrderForm;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,9 +17,8 @@ import java.util.List;
  * Created by 廖师兄
  * 2017-06-18 23:41
  */
-@Slf4j
 public class OrderForm2OrderDTOConverter {
-
+ private static final Logger log = LoggerFactory.getLogger(OrderForm2OrderDTOConverter.class);
     public static OrderDTO convert(OrderForm orderForm) {
         Gson gson = new Gson();
         OrderDTO orderDTO = new OrderDTO();

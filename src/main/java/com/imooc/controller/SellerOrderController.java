@@ -4,7 +4,8 @@ import com.imooc.dto.OrderDTO;
 import com.imooc.enums.ResultEnum;
 import com.imooc.exception.SellException;
 import com.imooc.service.OrderService;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -23,8 +24,9 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/seller/order")
-@Slf4j
 public class SellerOrderController {
+    private static final Logger log = LoggerFactory.getLogger(SellerOrderController.class);
+
 
     @Autowired
     private OrderService orderService;

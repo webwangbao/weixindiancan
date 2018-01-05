@@ -4,10 +4,11 @@ import com.imooc.constant.CookieConstant;
 import com.imooc.constant.RedisConstant;
 import com.imooc.exception.SellerAuthorizeException;
 import com.imooc.utils.CookieUtil;
-import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
@@ -24,8 +25,8 @@ import javax.servlet.http.HttpServletRequest;
  */
 @Aspect
 @Component
-@Slf4j
 public class SellerAuthorizeAspect {
+    private static final Logger log = LoggerFactory.getLogger(SellerAuthorizeAspect.class);
 
     @Autowired
     private StringRedisTemplate redisTemplate;

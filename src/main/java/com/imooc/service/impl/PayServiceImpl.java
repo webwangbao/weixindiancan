@@ -13,7 +13,8 @@ import com.lly835.bestpay.model.PayResponse;
 import com.lly835.bestpay.model.RefundRequest;
 import com.lly835.bestpay.model.RefundResponse;
 import com.lly835.bestpay.service.impl.BestPayServiceImpl;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,9 +23,8 @@ import org.springframework.stereotype.Service;
  * 2017-07-04 00:54
  */
 @Service
-@Slf4j
 public class PayServiceImpl implements PayService {
-
+      private static final Logger log = LoggerFactory.getLogger(PayServiceImpl.class);
     private static final String ORDER_NAME = "微信点餐订单";
 
     @Autowired
